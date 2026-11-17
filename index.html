@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>חברי מועדון נהנים יותר | נובמבר 2026</title>
+<meta name="description" content="חוברת המבצעים של טבע קסטל לחברי מועדון – נובמבר 2026">
+<meta name="theme-color" content="#1d5c37">
+<meta property="og:type" content="website">
+<meta property="og:title" content="חברי מועדון נהנים יותר | נובמבר 2026">
+<meta property="og:description" content="חוברת המבצעים של טבע קסטל לחברי מועדון – נובמבר 2026">
+<meta property="og:image" content="https://www.tevacastel.co.il/media/preview.jpg">
+<meta property="og:url" content="https://www.tevacastel.co.il/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="thumbs/p001.webp">
+<link rel="stylesheet" href="assets/viewer.css?v=6717569441">
+
+</head>
+<body>
+<div id="loader" class="loader">
+  <div class="loader-title" data-i18n="loading"></div>
+  <img src="thumbs/p001.webp" alt="">
+</div>
+
+<header class="topbar">
+  <button class="icon-btn" id="btnSearch" data-i18n-title="search"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+  <div class="topbar-center">
+    <h1 class="book-title" id="bookTitle"></h1>
+    <span class="sep"></span>
+    <label class="pager"><span data-i18n="pages"></span>
+      <input id="pageInput" inputmode="numeric" autocomplete="off" aria-label="page">
+      <span class="of">/ <span id="pageTotal"></span></span>
+    </label>
+  </div>
+  <button class="icon-btn" id="btnToc" data-i18n-title="toc"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></button>
+</header>
+
+<main class="stage" id="stage">
+  <div class="book-wrap" id="bookWrap"><div id="book"></div></div>
+  <button class="nav-arrow nav-fwd" id="navFwd" data-i18n-title="next"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+  <button class="nav-arrow nav-back" id="navBack" data-i18n-title="prev"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+  <button class="nav-edge nav-last" id="navLast" data-i18n-title="last"><svg viewBox="0 0 24 24"><path d="M5 5v14M19 5l-7 7 7 7"/></svg></button>
+  <button class="nav-edge nav-first" id="navFirst" data-i18n-title="first"><svg viewBox="0 0 24 24"><path d="M19 5v14M5 5l7 7-7 7"/></svg></button>
+</main>
+
+<nav class="toolbar" id="toolbar">
+  <button class="icon-btn" id="btnFull" data-i18n-title="fullscreen"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  <button class="icon-btn" id="btnZoom" data-i18n-title="zoom"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5M10.5 7.5v6M7.5 10.5h6"/></svg></button>
+  <span class="tb-sep"></span>
+  <button class="icon-btn" id="btnShare" data-i18n-title="share"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/></svg></button>
+  <a class="icon-btn" id="btnDownload" hidden download data-i18n-title="download"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+  <span class="tb-sep"></span>
+  <button class="icon-btn" id="btnThumbs" data-i18n-title="thumbs"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1"/></svg></button>
+  <button class="icon-btn" id="btnToc2" data-i18n-title="toc"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg></button>
+</nav>
+
+<a class="logo" id="logo" hidden target="_blank" rel="noopener"><img alt=""></a>
+
+<aside class="panel" id="panel" aria-hidden="true">
+  <div class="panel-head">
+    <span class="panel-title" id="panelTitle"></span>
+    <button class="icon-btn" id="panelClose" data-i18n-title="close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="panel-search" id="panelSearch">
+    <input id="searchInput" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder">
+  </div>
+  <div class="panel-body" id="panelBody"></div>
+</aside>
+
+<div class="share-pop" id="sharePop" hidden>
+  <a id="shareWa" target="_blank" rel="noopener">WhatsApp</a>
+  <a id="shareFb" target="_blank" rel="noopener">Facebook</a>
+  <a id="shareMail">Email</a>
+  <button id="shareCopy" data-i18n="copy"></button>
+</div>
+
+<div class="zoom" id="zoom" hidden>
+  <div class="zoom-scroll" id="zoomScroll"><div class="zoom-inner" id="zoomInner"></div></div>
+  <div class="zoom-bar">
+    <button class="icon-btn" id="zoomOut" data-i18n-title="zoomOut"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></button>
+    <button class="icon-btn" id="zoomIn" data-i18n-title="zoomIn"><svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg></button>
+    <button class="icon-btn" id="zoomClose" data-i18n-title="close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="flipbook-data.js?v=6717569441"></script>
+<script src="assets/page-flip.browser.js?v=6717569441"></script>
+<script src="assets/viewer.js?v=6717569441"></script>
+</body>
+</html>
